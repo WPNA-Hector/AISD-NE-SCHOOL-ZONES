@@ -20,61 +20,79 @@
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
+
     fetch('aisd_zones_cleaned.geojson')
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          console.error('Fetch error:', response.status, response.statusText);
+          throw new Error('Failed to load GeoJSON');
+        }
+        return response.json();
+      })
       .then(data => {
+        console.log('GeoJSON Data:', data); // Log GeoJSON to inspect structure
+
+        // Elementary Zones
         var elementaryZones = L.geoJSON(data, {
           filter: feature => feature.properties.LEVEL === 'Elementary' && feature.geometry.type === 'Polygon',
           style: function(feature) {
             return {
-              color: feature.properties.stroke,
-              weight: feature.properties['stroke-width'],
-              opacity: feature.properties['stroke-opacity'],
-              fillColor: feature.properties.fill,
-              fillOpacity: feature.properties['fill-opacity']
+              color: feature.properties.stroke || '#555555',
+              weight: feature.properties['stroke-width'] || 2,
+              opacity: feature.properties['stroke-opacity'] || 1,
+              fillColor: feature.properties.fill || '#32b631',
+              fillOpacity: feature.properties['fill-opacity'] || 0.5
             };
           },
-          onEachFeature: (f, l) => l.bindPopup(`<b>${f.properties.SCHOOL_NAME}</b>`)
+          onEachFeature: (f, l) => l.bindPopup(`<b>${f.properties.SCHOOL_NAME || 'Unknown School'}</b>`)
         });
+
+        // Middle Zones
         var middleZones = L.geoJSON(data, {
           filter: feature => feature.properties.LEVEL === 'Middle' && feature.geometry.type === 'Polygon',
           style: function(feature) {
             return {
-              color: feature.properties.stroke,
-              weight: feature.properties['stroke-width'],
-              opacity: feature.properties['stroke-opacity'],
-              fillColor: feature.properties.fill,
-              fillOpacity: feature.properties['fill-opacity']
+              color: feature.properties.stroke || '#555555',
+              weight: feature.properties['stroke-width'] || 2,
+              opacity: feature.properties['stroke-opacity'] || 1,
+              fillColor: feature.properties.fill || '#c41c1c',
+              fillOpacity: feature.properties['fill-opacity'] || 0.5
             };
           },
-          onEachFeature: (f, l) => l.bindPopup(`<b>${f.properties.SCHOOL_NAME}</b>`)
+          onEachFeature: (f, l) => l.bindPopup(`<b>${f.properties.SCHOOL_NAME || 'Unknown School'}</b>`)
         });
+
+        // High Zones
         var highZones = L.geoJSON(data, {
           filter: feature => feature.properties.LEVEL === 'High' && feature.geometry.type === 'Polygon',
           style: function(feature) {
             return {
-              color: feature.properties.stroke,
-              weight: feature.properties['stroke-width'],
-              opacity: feature.properties['stroke-opacity'],
-              fillColor: feature.properties.fill,
-              fillOpacity: feature.properties['fill-opacity']
+              color: feature.properties.stroke || '#555555',
+              weight: feature.properties['stroke-width'] || 2,
+              opacity: feature.properties['stroke-opacity'] || 1,
+              fillColor: feature.properties.fill || '#7e7e7e',
+              fillOpacity: feature.properties['fill-opacity'] || 0.5
             };
           },
-          onEachFeature: (f, l) => l.bindPopup(`<b>${f.properties.SCHOOL_NAME}</b>`)
+          onEachFeature: (f, l) => l.bindPopup(`<b>${f.properties.SCHOOL_NAME || 'Unknown School'}</b>`)
         });
+
+        // School Locations (Points)
         var schoolPoints = L.geoJSON(data, {
           filter: feature => feature.geometry.type === 'Point',
           pointToLayer: function(feature, latlng) {
             return L.circleMarker(latlng, {
               radius: feature.properties['marker-size'] === 'medium' ? 8 : 5,
-              fillColor: feature.properties['marker-color'],
+              fillColor: feature.properties['marker-color'] || (feature.properties.LEVEL === 'Elementary' ? '#32b631' : feature.properties.LEVEL === 'Middle' ? '#c41c1c' : '#7e7e7e'),
               fillOpacity: 0.8,
               color: '#000',
               weight: 1
             });
           },
-          onEachFeature: (f, l) => l.bindPopup(`<b>${f.properties.SCHOOL_NAME}</b>`)
+          onEachFeature: (f, l) => l.bindPopup(`<b>${f.properties.SCHOOL_NAME || 'Unknown School'}</b>`)
         });
+
+        // Add layers to control
         var overlays = {
           "Elementary Zones": elementaryZones,
           "Middle Zones": middleZones,
@@ -82,11 +100,22 @@
           "School Locations": schoolPoints
         };
         L.control.layers(null, overlays).addTo(map);
+
+        // Add all layers to map by default
         elementaryZones.addTo(map);
         middleZones.addTo(map);
         highZones.addTo(map);
         schoolPoints.addTo(map);
-        map.fitBounds(L.geoJSON(data).getBounds());
+
+        // Fit map to bounds of all features
+        if (data.features.length > 0) {
+          map.fitBounds(L.geoJSON(data).getBounds());
+        } else {
+          console.error('No features in GeoJSON');
+        }
+      })
+      .catch(error => {
+        console.error('Error loading GeoJSON:', error);
       });
   </script>
 </body>
