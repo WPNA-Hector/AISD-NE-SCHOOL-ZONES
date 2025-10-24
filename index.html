@@ -21,7 +21,7 @@
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
-    fetch('aisd-zones.geojson')
+    fetch('AISD zones.geojson') // Updated to match your file name
       .then(response => {
         if (!response.ok) {
           console.error('Fetch error:', response.status, response.statusText);
