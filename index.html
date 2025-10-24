@@ -21,7 +21,7 @@
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
-    fetch('aisd_zones_cleaned.geojson')
+    fetch('aisd_zones.geojson')
       .then(response => {
         if (!response.ok) {
           console.error('Fetch error:', response.status, response.statusText);
