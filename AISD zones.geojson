@@ -269,13 +269,16 @@
       "properties": {
         "SCHOOL_NAME": "Norman-Sims ES",
         "LEVEL": "Elementary",
-        "marker-color": "#32b631",
+        "marker-color": "#c41c1c",
         "marker-size": "medium",
         "marker-symbol": "circle"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-97.67431619148932, 30.278501042087996]
+        "coordinates": [
+          -97.67431619148932,
+          30.278501042087996
+        ]
       }
     },
     {
@@ -448,7 +451,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-97.72147572594902, 30.271339305113415]
+        "coordinates": [
+          -97.72147572594902,
+          30.271339305113415
+        ]
       }
     },
     {
@@ -456,13 +462,16 @@
       "properties": {
         "SCHOOL_NAME": "LBJ ECHS",
         "LEVEL": "High",
-        "marker-color": "#7e7e7e",
+        "marker-color": "#4e832a",
         "marker-size": "medium",
         "marker-symbol": "circle"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-97.65768751250829, 30.313641872558605]
+        "coordinates": [
+          -97.65768751250829,
+          30.313641872558605
+        ]
       }
     },
     {
@@ -470,13 +479,16 @@
       "properties": {
         "SCHOOL_NAME": "Northeast ECHS",
         "LEVEL": "High",
-        "marker-color": "#7e7e7e",
+        "marker-color": "#50a0c8",
         "marker-size": "medium",
         "marker-symbol": "circle"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-97.6896499322657, 30.323844184146637]
+        "coordinates": [
+          -97.6896499322657,
+          30.323844184146637
+        ]
       }
     },
     {
@@ -484,13 +496,16 @@
       "properties": {
         "SCHOOL_NAME": "Webb MS",
         "LEVEL": "Middle",
-        "marker-color": "#c41c1c",
+        "marker-color": "#50a0c8",
         "marker-size": "medium",
         "marker-symbol": "circle"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-97.70659617513412, 30.33368199397745]
+        "coordinates": [
+          -97.70659617513412,
+          30.33368199397745
+        ]
       }
     },
     {
@@ -498,13 +513,16 @@
       "properties": {
         "SCHOOL_NAME": "Reilly ES",
         "LEVEL": "Elementary",
-        "marker-color": "#32b631",
+        "marker-color": "#50a0c8",
         "marker-size": "medium",
         "marker-symbol": "circle"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-97.71955772130492, 30.328292457048803]
+        "coordinates": [
+          -97.71955772130492,
+          30.328292457048803
+        ]
       }
     },
     {
@@ -512,13 +530,16 @@
       "properties": {
         "SCHOOL_NAME": "Hart ES",
         "LEVEL": "Elementary",
-        "marker-color": "#32b631",
+        "marker-color": "#50a0c8",
         "marker-size": "medium",
         "marker-symbol": "circle"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-97.68808393980159, 30.34258816774866]
+        "coordinates": [
+          -97.68808393980159,
+          30.34258816774866
+        ]
       }
     },
     {
@@ -526,13 +547,16 @@
       "properties": {
         "SCHOOL_NAME": "Eastside ECHS",
         "LEVEL": "High",
-        "marker-color": "#7e7e7e",
+        "marker-color": "#c41c1c",
         "marker-size": "medium",
         "marker-symbol": "circle"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-97.70900739873747, 30.270268959466932]
+        "coordinates": [
+          -97.70900739873747,
+          30.270268959466932
+        ]
       }
     },
     {
@@ -783,7 +807,7 @@
       "properties": {
         "SCHOOL_NAME": "Pickle DL ES",
         "LEVEL": "Elementary",
-        "stroke": "#555555",
+        "stroke": "#50a0c8",
         "stroke-width": 2,
         "stroke-opacity": 1,
         "fill": "#50a0c8",
@@ -872,7 +896,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-97.64711989121116, 30.301135421071677]
+        "coordinates": [
+          -97.64711989121116,
+          30.301135421071677
+        ]
       }
     },
     {
@@ -886,7 +913,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-97.63532488475701, 30.30011798601818]
+        "coordinates": [
+          -97.63532488475701,
+          30.30011798601818
+        ]
       }
     },
     {
@@ -894,27 +924,34 @@
       "properties": {
         "SCHOOL_NAME": "Garcia YMLA",
         "LEVEL": "Middle",
-        "marker-color": "#c41c1c",
+        "marker-color": "#571cc4",
         "marker-size": "medium",
         "marker-symbol": "circle"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-97.64215310327461, 30.311142846844476]
-      }
+        "coordinates": [
+          -97.64215310327461,
+          30.311142846844476
+        ]
+      },
+      "id": 14
     },
     {
       "type": "Feature",
       "properties": {
         "SCHOOL_NAME": "Pickle DL ES",
         "LEVEL": "Elementary",
-        "marker-color": "#32b631",
+        "marker-color": "#50a0c8",
         "marker-size": "medium",
         "marker-symbol": "circle"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-97.69390552813869, 30.33274057320304]
+        "coordinates": [
+          -97.69390552813869,
+          30.33274057320304
+        ]
       }
     },
     {
@@ -928,7 +965,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-97.67661282788718, 30.302570267997154]
+        "coordinates": [
+          -97.67661282788718,
+          30.302570267997154
+        ]
       }
     },
     {
@@ -936,13 +976,16 @@
       "properties": {
         "SCHOOL_NAME": "Campbell ES",
         "LEVEL": "Elementary",
-        "marker-color": "#32b631",
+        "marker-color": "#c41c1c",
         "marker-size": "medium",
         "marker-symbol": "circle"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-97.71401990299454, 30.28283333850031]
+        "coordinates": [
+          -97.71401990299454,
+          30.28283333850031
+        ]
       }
     },
     {
@@ -2145,7 +2188,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-97.69188019243138, 30.31483519892184]
+        "coordinates": [
+          -97.69188019243138,
+          30.31483519892184
+        ]
       }
     },
     {
@@ -2159,7 +2205,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-97.69017457990239, 30.307249976175115]
+        "coordinates": [
+          -97.69017457990239,
+          30.307249976175115
+        ]
       }
     },
     {
@@ -2167,14 +2216,18 @@
       "properties": {
         "SCHOOL_NAME": "Sadler Means YWLA",
         "LEVEL": "Middle",
-        "marker-color": "#c41c1c",
+        "marker-color": "#501cc4",
         "marker-size": "medium",
         "marker-symbol": "circle"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-97.68116554672628, 30.31392318559304]
-      }
+        "coordinates": [
+          -97.68116554672628,
+          30.31392318559304
+        ]
+      },
+      "id": 29
     },
     {
       "type": "Feature",
